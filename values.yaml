@@ -8,7 +8,7 @@ image:
   repository: logspace/langflow
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: null
 
 imagePullSecrets: []
 nameOverride: ""
@@ -88,16 +88,14 @@ configMap:
   LANGFLOW_DATABASE_URL: postgresql://langflow:langflow@127.0.0.1:5432/langflow
   LANGFLOW_AUTO_LOGIN: false
   LANGFLOW_CACHE_TYPE: redis
+  LANGFLOW_SECRET_KEY: langflow
   LANGFLOW_NEW_USER_IS_ACTIVE: false
   LANGFLOW_REDIS_CACHE_EXPIRE: 3600
   LANGFLOW_REDIS_URL: redis://:password@127.0.0.1:6379/7
-  LANGFLOW_REDIS_EXPIRE: 3600
-  LANGFLOW_REDIS_DB: 6
-  LANGFLOW_REDIS_HOST: result_backend
-  LANGFLOW_REDIS_PASSWORD: password
-  LANGFLOW_REDIS_PORT: 6379
   LANGFLOW_SUPERUSER: superuser
   LANGFLOW_SUPERUSER_PASSWORD: superuser
-  BROKER_URL: redis://:password@127.0.0.1:6379/9
   LANGFLOW_LOG_LEVEL: info
+  LANGFLOW_LANGFUSE_HOST: null
+  LANGFLOW_LANGFUSE_PUBLIC_KEY: null
+  LANGFLOW_LANGFUSE_SECRET_KEY: null
   OPENAI_API_KEY: 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

@@ -38,7 +38,7 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default latest }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -96,15 +96,15 @@ spec:
                 configMapKeyRef:
                   key: LANGFLOW_REDIS_URL
                   name: langflow-configmap
-            - name: BROKER_URL
-              valueFrom:
-                configMapKeyRef:
-                  key: BROKER_URL
-                  name: langflow-configmap
             - name: LANGFLOW_AUTO_LOGIN
               valueFrom:
                 configMapKeyRef:
                   key: LANGFLOW_AUTO_LOGIN
+                  name: langflow-configmap
+            - name: LANGFLOW_SECRET_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: LANGFLOW_SECRET_KEY
                   name: langflow-configmap
             {{ if .Values.configMap.LANGFLOW_LANGFUSE_HOST }}
             - name: LANGFLOW_LANGFUSE_HOST
