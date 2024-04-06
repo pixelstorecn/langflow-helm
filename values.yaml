@@ -87,7 +87,7 @@ configMap:
   name: langflow-configmap
   LANGFLOW_DATABASE_URL: postgresql://langflow:langflow@127.0.0.1:5432/langflow
   LANGFLOW_AUTO_LOGIN: false
-  LANGFLOW_CACHE_TYPE: redis
+  LANGFLOW_CACHE_TYPE: memory
   LANGFLOW_SECRET_KEY: langflow
   LANGFLOW_NEW_USER_IS_ACTIVE: false
   LANGFLOW_REDIS_CACHE_EXPIRE: 3600
