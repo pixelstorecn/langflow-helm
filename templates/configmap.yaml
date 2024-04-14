@@ -17,6 +17,7 @@ data:
   LANGFLOW_REDIS_HOST: {{ .Values.configMap.LANGFLOW_REDIS_HOST | default "127.0.0.1" }}
   LANGFLOW_REDIS_PASSWORD: {{ .Values.configMap.LANGFLOW_REDIS_PASSWORD | default "redis" }}
   LANGFLOW_REDIS_PORT: "{{ .Values.configMap.LANGFLOW_REDIS_PORT | default "6379" }}"
+  LANGFLOW_SECRET_KEY: {{ .Values.configMap.LANGFLOW_SECRET_KEY }}
   BROKER_URL: {{ .Values.configMap.BROKER_URL | default "redis://127.0.0.1:6379/1" }}
   OPENAI_API_KEY: {{ .Values.configMap.OPENAI_API_KEY }}
   LANGFLOW_LOG_LEVEL: {{ .Values.configMap.LANGFLOW_LOG_LEVEL | default "info" }}
