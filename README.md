@@ -38,5 +38,8 @@ helm install langflow oci://registry-1.docker.io/pixelstorecn/langflow-helm \
 ## Preferred install command (With more high availabilty)
 ```shell
 helm install langflow oci://registry-1.docker.io/pixelstorecn/langflow-helm \
-   -n <namespace> --set fullnameOverride=langflow --set image.tag=<version you want> --set configMap.LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@pgsqladdress:5432/langflow --set configMap.LANGFLOW_CACHE_TYPE=redis --set configMap.LANGFLOW_REDIS_URL=redis://:password@redisaddress:6379/7
+   -n <namespace> --set fullnameOverride=langflow --set image.tag=<version you want> \
+   --set configMap.LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@pgsqladdress:5432/langflow \
+   --set configMap.LANGFLOW_CACHE_TYPE=redis \
+   --set configMap.LANGFLOW_REDIS_URL=redis://:password@redisaddress:6379/1
 ```

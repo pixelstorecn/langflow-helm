@@ -85,7 +85,7 @@ affinity: {}
 
 configMap:
   name: langflow-configmap
-  LANGFLOW_DATABASE_URL: postgresql://langflow:langflow@127.0.0.1:5432/langflow
+  LANGFLOW_DATABASE_URL: sqlite:///./langflow.db
   LANGFLOW_AUTO_LOGIN: false
   LANGFLOW_CACHE_TYPE: memory
   LANGFLOW_SECRET_KEY: langflow
